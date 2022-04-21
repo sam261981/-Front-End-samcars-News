@@ -8,11 +8,20 @@ export const getArticles = (topic, sort_by, order) => {
     .get(`/articles`, {
       params: {
         topic: topic,
-        sort_by: sort_by,
-        order: order,
       },
     })
     .then((res) => {
       return res.data.articles
     })
+}
+
+export const getArticlesByTopic = (topic) => {
+  return api.get(`/articles?topic=${topic}`).then((res) => {
+    return res.data.articles
+  })
+}
+export const getArticlesTopics = () => {
+  return api.get('/topics').then((res) => {
+    return res.data
+  })
 }

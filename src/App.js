@@ -13,6 +13,7 @@ function App() {
         <Title />
         <Routes>
           <Route path="/" element={<ArticlesList />} />
+          <Route path="/articles/:topic" element={<ArticlesList />} />
         </Routes>
       </div>
     </BrowserRouter>
